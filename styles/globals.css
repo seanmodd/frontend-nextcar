@@ -1,0 +1,26 @@
+/* .body {
+  background-color: green;
+  height: "9000px";
+  color: "green";
+} */
+
+.scroll {
+  /* position: fixed;
+  bottom: 0.5rem;
+  right: 0.5rem; */
+  /* background-color: red; */
+  animation: fadeIn 700ms ease-in-out 1s both;
+  /* height: 9000px; */
+  /* cursor: pointer;
+  font-size: 40px;
+  margin-right: 2rem; */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
