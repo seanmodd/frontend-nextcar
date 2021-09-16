@@ -22,21 +22,19 @@ function DarkModeSwitch({ children }) {
   };
 
   return (
-    <div>
-      <>
-        <HStack align="center" justify="flex" px={80}>
-          <IconButton
-            aria-label="Toggle Dark Switch"
-            icon={colorMode === 'dark' ? <SunIcon /> : <MoonIcon />}
-            onClick={toggleColorMode}
-            color={iconColor[colorMode]}
-            // bg={bgColor[colorMode]}
-          >
-            {children}
-          </IconButton>
-        </HStack>
-      </>
-    </div>
+    <>
+      <HStack align="center" justify="flex" px={80}>
+        <IconButton
+          aria-label="Toggle Dark Switch"
+          icon={colorMode === 'dark' ? <SunIcon /> : <MoonIcon />}
+          onClick={toggleColorMode}
+          color={iconColor[colorMode]}
+          // bg={bgColor[colorMode]}
+        >
+          {children}
+        </IconButton>
+      </HStack>
+    </>
   );
 }
 

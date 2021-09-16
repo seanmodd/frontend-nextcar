@@ -21,15 +21,12 @@ function App() {
     // <Container>
     <MyContainer>
       <Hero />
-
-      <CTA />
     </MyContainer>
     // </Container>
   );
 }
 
 export default App;
-
 
 export const MyContainer = (props) => {
   const { colorMode } = useColorMode();
@@ -39,8 +36,11 @@ export const MyContainer = (props) => {
   const color = { light: 'black', dark: 'white' };
   return (
     <Box
+      // borderWidth="4px"
+      borderColor="red"
       direction="column"
       alignItems="center"
+      minH="100vh"
       justifyContent="flex-start"
       bg={bgColor[colorMode]}
       color={color[colorMode]}
