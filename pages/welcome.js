@@ -1,10 +1,8 @@
-import Link from 'next/link';
 import {
   Flex,
   Box,
   useColorMode,
   Link as ChakraLink,
-  useColorModeValue,
   Text,
   Code,
   Heading,
@@ -13,22 +11,20 @@ import {
   ListItem,
 } from '@chakra-ui/react';
 import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons';
-import { Hero } from '../components/Hero';
+import { Hero } from '../components/Hero-2';
 import { Main } from '../components/Main';
 import { CTA } from '../components/CTA';
 import { Footer } from '../components/Footer';
+import SingleCar from '../components/chakra/SingleCar/App';
 
 function App() {
-  const color = useColorModeValue('gray.900', '#ebebeb');
   return (
     // <Container>
     <MyContainer>
       <Hero />
-      <Box w="100%" justify="center">
-        <Text color={color} textAlign="center">
-          <Link href="/welcome">Click to continue</Link>
-        </Text>
-      </Box>
+      <SingleCar />
+      <SingleCar />
+      <SingleCar />
     </MyContainer>
     // </Container>
   );

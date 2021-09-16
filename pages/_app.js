@@ -4,8 +4,11 @@ import {
   IconButton,
   HStack,
   ColorModeProvider,
+  Box,
 } from '@chakra-ui/react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
+import NavbarWithSubmenu from '../components/chakra/NavbarWithSubmenu/App';
+import SimpleFooter from '../components/chakra/SimpleFooter/App';
 import theme from '../styles/theme';
 import '../styles/globals.css';
 
@@ -17,9 +20,14 @@ function MyApp({ Component, pageProps }) {
           useSystemColorMode: true,
         }}
       >
-        <DarkModeSwitch />
         <div className="scroll">
-          <Component {...pageProps} />
+          <MyBox>
+            <NavbarWithSubmenu />
+            {/* <DarkModeSwitch /> */}
+
+            <Component {...pageProps} />
+            <SimpleFooter />
+          </MyBox>
         </div>
       </ColorModeProvider>
     </ChakraProvider>
@@ -27,8 +35,7 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp;
-
-const DarkModeSwitch = ({ children }) => {
+const MyBox = ({ children }) => {
   const { colorMode, toggleColorMode } = useColorMode();
   const iconColor = {
     light: 'black',
@@ -40,25 +47,13 @@ const DarkModeSwitch = ({ children }) => {
   };
   return (
     <>
-      <HStack
-        position="fixed"
-        zIndex="1"
-        // borderWidth="4px"
-        // backgroundColor={bgColor[colorMode]}
-        w="100vw"
-        justify="flex-end"
+      <Box
+        minH="100vh"
+        px={['0px', '0px', '0px', '0px']}
+        bg={bgColor[colorMode]}
       >
-        <IconButton
-          aria-label="Toggle Dark Switch"
-          icon={colorMode === 'dark' ? <SunIcon /> : <MoonIcon />}
-          onClick={toggleColorMode}
-          color={iconColor[colorMode]}
-          marginRight="4rem"
-          // bg={bgColor[colorMode]}
-        >
-          {children}
-        </IconButton>
-      </HStack>
+        {children}
+      </Box>
     </>
   );
 };
